@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface StudentRepository {
     Void save(Student student);
-    Student findById(int id);
+    Student findById(Long id);
     List<Student> findAll();
 }

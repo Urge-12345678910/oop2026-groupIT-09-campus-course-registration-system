@@ -5,11 +5,11 @@ import java.util.List;
 
 public interface EnrollmentRepository {
 
-    void enroll(int studentId, int courseId);
+    void enroll(Long studentId, Long courseId);
 
-    void remove(int studentId, int courseId);
+    void remove(Long studentId, Long courseId);
 
-    List<Enrollment> findByStudentId(int studentId);
+    List<Enrollment> findByStudentId(Long studentId);
 
-    List<Enrollment> findByCourseId(int courseId);
+    List<Enrollment> findByCourseId(Long courseId);
 }
