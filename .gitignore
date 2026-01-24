@@ -22,9 +22,8 @@ bin/
 /dist/
 /nbdist/
 /.nb-gradle/
-src/config.properties
+out/config.properties
 ### VS Code ###
 .vscode/
-
 ### Mac OS ###
 .DS_Store

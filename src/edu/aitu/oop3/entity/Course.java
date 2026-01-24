@@ -5,7 +5,7 @@ public class Course {
     private String title;
     private int capacity;
     private String schedule;
-    public Course(Long id,String title, int capacity,String schedule){
+    protected Course(Long id,String title, int capacity,String schedule){
         this.id=id;
         this.title=title;
         this.capacity=capacity;

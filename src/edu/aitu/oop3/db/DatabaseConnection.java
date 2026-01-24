@@ -1,4 +1,6 @@
 package edu.aitu.oop3.db;
+import org.checkerframework.checker.nullness.qual.NonNull;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +15,7 @@ public class DatabaseConnection {
     private static final String PASSWORD = loadPassword();// ← DATABASE PASSWORD
     private static String loadPassword() {
         Properties props = new Properties();
-        try (InputStream input = new FileInputStream("config.properties")) {
+        try (InputStream input = new FileInputStream("src/resources/config.properties")) {
             props.load(input);
             String value = props.getProperty("DB_PASSWORD");
             if (value == null || value.isBlank()) {

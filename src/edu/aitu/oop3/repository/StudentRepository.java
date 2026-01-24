@@ -4,7 +4,7 @@ import edu.aitu.oop3.entity.Student;
 import java.util.List;
 
 public interface StudentRepository {
-    Void save(Student student);
+    void save(Student student);
     Student findById(Long id);
     List<Student> findAll();
 }
