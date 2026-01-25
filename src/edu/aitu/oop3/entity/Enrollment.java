@@ -6,7 +6,7 @@ public class Enrollment {
     private Long studentId;
     private Long courseId;
 
-    public Enrollment(Long id, Long studentId, Long courseId) {
+    protected Enrollment(Long id, Long studentId, Long courseId) {
         this.id = id;
         this.studentId = studentId;
         this.courseId = courseId;
@@ -15,11 +15,11 @@ public class Enrollment {
         return id;
     }
 
-    public Long getStudentId() {
+    public  Long getStudentId() {
         return studentId;
     }
 
-    public Long getCourseId() {
+    public  Long getCourseId() {
         return courseId;
     }
 
