@@ -90,7 +90,6 @@ public class Main {
                         registrationService.register(studentId, courseId);
                         System.out.println("Student registered successfully.");
                     }
-
                     case 6 -> {
                         System.out.print("Student ID: ");
                         Long studentId = scanner.nextLong();
