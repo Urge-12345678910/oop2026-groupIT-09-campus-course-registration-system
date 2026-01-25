@@ -6,7 +6,7 @@ public class Enrollment {
     private Long studentId;
     private Long courseId;
 
-    protected Enrollment(Long id, Long studentId, Long courseId) {
+    public Enrollment(Long id, Long studentId, Long courseId) {
         this.id = id;
         this.studentId = studentId;
         this.courseId = courseId;

@@ -6,7 +6,7 @@ public class Student {
     private String name;
     private String email;
 
-    protected Student(Long id, String name, String email) {
+    public Student(Long id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
