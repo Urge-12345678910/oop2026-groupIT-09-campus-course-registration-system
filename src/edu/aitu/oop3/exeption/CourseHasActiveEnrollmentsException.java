@@ -6,3 +6,4 @@ public class CourseHasActiveEnrollmentsException extends RuntimeException {
     }
 }
 
+//by ehsanullah alimy

@@ -13,3 +13,4 @@ public interface EnrollmentRepository {
 
     List<Enrollment> findByCourseId(Long courseId);
 }
+//by ehsanullah alimy
