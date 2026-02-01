@@ -22,4 +22,3 @@ public class CourseService {
         courseRepository.deleteById(courseId);
     }
 }
-//by ehsanullah alimy
