@@ -51,6 +51,21 @@ public class JdbcStudentRepository implements StudentRepository {
             throw new RuntimeException(e);
         }
     }
+    @Override
+    public void deleteById(Long id) {
+        String sql = "DELETE FROM students WHERE id = ?";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     @Override
     public List<Student> findAll() {

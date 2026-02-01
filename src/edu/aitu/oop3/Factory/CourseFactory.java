@@ -5,6 +5,7 @@ import edu.aitu.oop3.entity.LectureCourse;
 import edu.aitu.oop3.entity.OnlineCourse;
 
 
+
 public class CourseFactory {
 
     public static Course create(

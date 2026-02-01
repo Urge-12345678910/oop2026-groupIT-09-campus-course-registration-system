@@ -67,7 +67,7 @@ public class Main {
                         System.out.print("Course type (LECTURE / LAB / ONLINE): ");
                         String type = scanner.nextLine();
 
-                        Course course = CourseFactory.createCourse(
+                        Course course = CourseFactory.create(
                                 type,
                                 null,
                                 title,

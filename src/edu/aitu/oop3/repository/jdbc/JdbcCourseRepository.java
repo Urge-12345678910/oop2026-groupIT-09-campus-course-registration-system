@@ -3,6 +3,8 @@ package edu.aitu.oop3.repository.jdbc;
 import edu.aitu.oop3.db.DatabaseConnection;
 import edu.aitu.oop3.entity.Course;
 import edu.aitu.oop3.repository.CourseRepository;
+import edu.aitu.oop3.Factory.CourseFactory;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
