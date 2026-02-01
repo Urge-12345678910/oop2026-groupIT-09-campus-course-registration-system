@@ -92,10 +92,14 @@ public class Main {
                     case 4 -> {
                         List<Course> courses = courseRepo.findAll();
                         courses.forEach(c ->
-                                System.out.println(c.getid() + " | " + c.getTitle()
-                                        + " | " + c.getCapacity()
-                                        + " | " + c.getSchedule())
+                                System.out.println(
+                                        c.getid() + " | " + c.getTitle()
+                                                + " | " + c.getCapacity()
+                                                + " | " + c.getSchedule()
+                                                + " | " + c.getType()
+                                )
                         );
+
                     }
 
                     case 5 -> {
