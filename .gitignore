@@ -27,3 +27,4 @@ out/resources/config.properties
 .vscode/
 ### Mac OS ###
 .DS_Store
+**/config.properties
