@@ -9,6 +9,7 @@ import edu.aitu.oop3.service.*;
 import edu.aitu.oop3.Factory.CourseFactory;
 import edu.aitu.oop3.entity.StudentSchedule;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,6 +38,8 @@ public class Main {
             System.out.println("7. View students enrolled in a course");
             System.out.println("8. Delete course");
             System.out.println("9. View student schedule");
+            System.out.println("10. View courses sorted by capacity");
+            System.out.println("11. View courses with capacity > N");
             System.out.println("0. Exit");
             System.out.print("Choose option: ");
 
@@ -159,6 +162,38 @@ public class Main {
                                 )
                         );
                     }
+                    case 10 -> {
+                        List<Course> courses = courseRepo.findAll();
+
+                        courses.stream()
+                                .sorted(Comparator.comparingInt(Course::getCapacity))
+                                .forEach(c ->
+                                        System.out.println(
+                                                c.getid() + " | " +
+                                                        c.getTitle() + " | " +
+                                                        c.getCapacity()
+                                        )
+                                );
+                    }
+                    case 11 -> {
+                        System.out.print("Minimum capacity: ");
+                        int min = scanner.nextInt();
+                        scanner.nextLine();
+
+                        List<Course> courses = courseRepo.findAll();
+
+                        courses.stream()
+                                .filter(c -> c.getCapacity() > min)
+                                .forEach(c ->
+                                        System.out.println(
+                                                c.getid() + " | " +
+                                                        c.getTitle() + " | " +
+                                                        c.getCapacity()
+                                        )
+                                );
+                    }
+
+
 
                     case 0 -> {
                         System.out.println("Bye!");
