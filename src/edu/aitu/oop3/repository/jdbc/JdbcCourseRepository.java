@@ -17,7 +17,7 @@ public class JdbcCourseRepository implements CourseRepository {
 
     @Override
     public void save(Course course) {
-        String sql = "INSERT INTO courses (title, capacity, schedule) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO courses (title, capacity, schedule, type) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -25,6 +25,7 @@ public class JdbcCourseRepository implements CourseRepository {
             stmt.setString(1, course.getTitle());
             stmt.setInt(2, course.getCapacity());
             stmt.setString(3, course.getSchedule());
+            stmt.setString(4, course.getType());
 
             stmt.executeUpdate();
 
