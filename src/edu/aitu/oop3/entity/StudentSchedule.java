@@ -19,8 +19,6 @@ public class StudentSchedule {
     public List<Course> getCourses() {
         return courses;
     }
-
-    // ===== BUILDER =====
     public static class Builder {
 
         private Long studentId;
