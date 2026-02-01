@@ -6,6 +6,7 @@ import edu.aitu.oop3.entity.Student;
 import edu.aitu.oop3.exeption.*;
 import edu.aitu.oop3.repository.jdbc.*;
 import edu.aitu.oop3.service.*;
+import edu.aitu.oop3.Factory.CourseFactory;
 
 import java.util.List;
 import java.util.Scanner;
@@ -55,15 +56,29 @@ public class Main {
                     case 2 -> {
                         System.out.print("Title: ");
                         String title = scanner.nextLine();
+
                         System.out.print("Capacity: ");
                         int capacity = scanner.nextInt();
                         scanner.nextLine();
+
                         System.out.print("Schedule: ");
                         String schedule = scanner.nextLine();
 
-                        courseRepo.save(new Course(null, title, capacity, schedule));
+                        System.out.print("Course type (LECTURE / LAB / ONLINE): ");
+                        String type = scanner.nextLine();
+
+                        Course course = CourseFactory.createCourse(
+                                type,
+                                null,
+                                title,
+                                capacity,
+                                schedule
+                        );
+
+                        courseRepo.save(course);
                         System.out.println("Course added.");
                     }
+
                     case 3 -> {
                         List<Student> students = studentService.findAllStudents();
                         for (Student s : students) {

@@ -1,16 +1,17 @@
 package edu.aitu.oop3.entity;
 
-public class Course {
-    private Long id;
-    private String title;
-    private int capacity;
-    private String schedule;
+public abstract class Course {
+    protected Long id;
+    protected String title;
+    protected int capacity;
+    protected String schedule;
     public Course(Long id,String title, int capacity,String schedule){
         this.id=id;
         this.title=title;
         this.capacity=capacity;
         this.schedule=schedule;
     }
+    public abstract String getType();
     public Long getid() {
         return id;
     }

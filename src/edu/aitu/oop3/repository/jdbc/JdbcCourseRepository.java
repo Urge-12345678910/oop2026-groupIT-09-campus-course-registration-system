@@ -33,7 +33,7 @@ public class JdbcCourseRepository implements CourseRepository {
 
     @Override
     public Course findById(Long id) {
-        String sql = "SELECT id, title, capacity, schedule FROM courses WHERE id = ?";
+        String sql = "SELECT id, title, capacity, schedule, type FROM courses WHERE id = ?";
 
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -42,14 +42,14 @@ public class JdbcCourseRepository implements CourseRepository {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                return new Course(
+                return CourseFactory.create(
+                        rs.getString("type"),
                         rs.getLong("id"),
                         rs.getString("title"),
                         rs.getInt("capacity"),
                         rs.getString("schedule")
                 );
             }
-
             return null;
 
         } catch (SQLException e) {
@@ -57,9 +57,10 @@ public class JdbcCourseRepository implements CourseRepository {
         }
     }
 
+
     @Override
     public List<Course> findAll() {
-        String sql = "SELECT id, title, capacity, schedule FROM courses";
+        String sql = "SELECT id, title, capacity, schedule, type FROM courses";
         List<Course> courses = new ArrayList<>();
 
         try (Connection conn = DatabaseConnection.getConnection();
@@ -67,12 +68,15 @@ public class JdbcCourseRepository implements CourseRepository {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                courses.add(new Course(
-                        rs.getLong("id"),
-                        rs.getString("title"),
-                        rs.getInt("capacity"),
-                        rs.getString("schedule")
-                ));
+                courses.add(
+                        CourseFactory.create(
+                                rs.getString("type"),
+                                rs.getLong("id"),
+                                rs.getString("title"),
+                                rs.getInt("capacity"),
+                                rs.getString("schedule")
+                        )
+                );
             }
 
         } catch (SQLException e) {
@@ -81,6 +85,7 @@ public class JdbcCourseRepository implements CourseRepository {
 
         return courses;
     }
+
 
     @Override
     public void deleteById(Long id) {
