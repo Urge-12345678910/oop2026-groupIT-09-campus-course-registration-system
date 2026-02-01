@@ -7,6 +7,7 @@ import edu.aitu.oop3.exeption.*;
 import edu.aitu.oop3.repository.jdbc.*;
 import edu.aitu.oop3.service.*;
 import edu.aitu.oop3.Factory.CourseFactory;
+import edu.aitu.oop3.entity.StudentSchedule;
 
 import java.util.List;
 import java.util.Scanner;
@@ -35,6 +36,7 @@ public class Main {
             System.out.println("6. Drop student from course");
             System.out.println("7. View students enrolled in a course");
             System.out.println("8. Delete course");
+            System.out.println("9. View student schedule");
             System.out.println("0. Exit");
             System.out.print("Choose option: ");
 
@@ -135,6 +137,23 @@ public class Main {
                         Long courseId = scanner.nextLong();
                         courseService.deleteCourse(courseId);
                         System.out.println("Course deleted.");
+                    }
+                    case 9 -> {
+                        System.out.print("Student ID: ");
+                        Long studentId = scanner.nextLong();
+
+                        StudentSchedule schedule =
+                                registrationService.getStudentSchedule(studentId);
+
+                        System.out.println("Schedule for student " + studentId + ":");
+
+                        schedule.getCourses().forEach(c ->
+                                System.out.println(
+                                        c.getTitle() + " | " +
+                                                c.getSchedule() + " | " +
+                                                c.getType()
+                                )
+                        );
                     }
 
                     case 0 -> {

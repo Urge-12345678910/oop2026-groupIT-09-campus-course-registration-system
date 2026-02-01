@@ -6,7 +6,7 @@ import edu.aitu.oop3.exeption.GroupCapacityExceededException;
 import edu.aitu.oop3.exeption.TimeConflictException;
 import edu.aitu.oop3.repository.CourseRepository;
 import edu.aitu.oop3.repository.EnrollmentRepository;
-
+import edu.aitu.oop3.entity.StudentSchedule;
 import java.util.List;
 
 public class RegistrationService {
@@ -48,6 +48,20 @@ public class RegistrationService {
         }
 
         enrollmentRepository.enroll(studentId, courseId);
+    }
+    public StudentSchedule getStudentSchedule(Long studentId) {
+
+        List<Enrollment> enrollments =
+                enrollmentRepository.findByStudentId(studentId);
+
+        List<Course> courses = enrollments.stream()
+                .map(e -> courseRepository.findById(e.getCourseId()))
+                .toList();
+
+        return new StudentSchedule.Builder()
+                .studentId(studentId)
+                .courses(courses)
+                .build();
     }
 
     public void drop(Long studentId, Long courseId) {
