@@ -1,5 +1,4 @@
-package edu.aitu.oop3.db;
-import org.checkerframework.checker.nullness.qual.NonNull;
+package edu.aitu.oop3.components.common.db;
 
 import java.io.FileInputStream;
 import java.io.IOException;

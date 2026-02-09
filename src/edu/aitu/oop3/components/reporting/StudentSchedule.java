@@ -1,4 +1,6 @@
-package edu.aitu.oop3.entity;
+package edu.aitu.oop3.components.reporting;
+
+import edu.aitu.oop3.components.registration.Course;
 
 import java.util.List;
 

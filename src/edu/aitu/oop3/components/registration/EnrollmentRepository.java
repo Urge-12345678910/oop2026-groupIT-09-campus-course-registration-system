@@ -1,6 +1,5 @@
-package edu.aitu.oop3.repository;
+package edu.aitu.oop3.components.registration;
 
-import edu.aitu.oop3.entity.Enrollment;
 import java.util.List;
 
 public interface EnrollmentRepository {

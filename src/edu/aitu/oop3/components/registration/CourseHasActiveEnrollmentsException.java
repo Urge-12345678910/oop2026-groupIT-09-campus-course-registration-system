@@ -1,4 +1,4 @@
-package edu.aitu.oop3.exeption;
+package edu.aitu.oop3.components.registration;
 
 public class CourseHasActiveEnrollmentsException extends RuntimeException {
     public CourseHasActiveEnrollmentsException(String message) {
@@ -6,4 +6,3 @@ public class CourseHasActiveEnrollmentsException extends RuntimeException {
     }
 }
 
-//by ehsanullah alimy

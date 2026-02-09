@@ -1,12 +1,6 @@
-package edu.aitu.oop3.service;
+package edu.aitu.oop3.components.registration;
 
-import edu.aitu.oop3.entity.Course;
-import edu.aitu.oop3.entity.Enrollment;
-import edu.aitu.oop3.exeption.GroupCapacityExceededException;
-import edu.aitu.oop3.exeption.TimeConflictException;
-import edu.aitu.oop3.repository.CourseRepository;
-import edu.aitu.oop3.repository.EnrollmentRepository;
-import edu.aitu.oop3.entity.StudentSchedule;
+import edu.aitu.oop3.components.reporting.StudentSchedule;
 import java.util.List;
 
 public class RegistrationService {

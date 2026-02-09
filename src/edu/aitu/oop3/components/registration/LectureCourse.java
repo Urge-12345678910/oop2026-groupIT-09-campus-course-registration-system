@@ -1,5 +1,4 @@
-package edu.aitu.oop3.entity;
-import edu.aitu.oop3.entity.Course;
+package edu.aitu.oop3.components.registration;
 
 public class LectureCourse extends Course {
 

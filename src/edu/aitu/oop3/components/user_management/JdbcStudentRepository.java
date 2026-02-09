@@ -1,7 +1,5 @@
-package edu.aitu.oop3.repository.jdbc;
-import edu.aitu.oop3.db.DatabaseConnection;
-import edu.aitu.oop3.entity.Student;
-import edu.aitu.oop3.repository.StudentRepository;
+package edu.aitu.oop3.components.user_management;
+import edu.aitu.oop3.components.common.db.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

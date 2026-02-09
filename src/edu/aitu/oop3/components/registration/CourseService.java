@@ -1,7 +1,5 @@
-package edu.aitu.oop3.service;
-import edu.aitu.oop3.exeption.CourseHasActiveEnrollmentsException;
-import edu.aitu.oop3.repository.CourseRepository;
-import edu.aitu.oop3.repository.EnrollmentRepository;
+package edu.aitu.oop3.components.registration;
+
 public class CourseService {
 
     private final CourseRepository courseRepository;

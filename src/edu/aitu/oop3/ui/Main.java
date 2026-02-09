@@ -1,13 +1,10 @@
 package edu.aitu.oop3.ui;
 
-import edu.aitu.oop3.entity.Course;
-import edu.aitu.oop3.entity.Enrollment;
-import edu.aitu.oop3.entity.Student;
-import edu.aitu.oop3.exeption.*;
-import edu.aitu.oop3.repository.jdbc.*;
-import edu.aitu.oop3.service.*;
-import edu.aitu.oop3.Factory.CourseFactory;
-import edu.aitu.oop3.entity.StudentSchedule;
+import edu.aitu.oop3.components.registration.*;
+import edu.aitu.oop3.components.user_management.JdbcStudentRepository;
+import edu.aitu.oop3.components.user_management.Student;
+import edu.aitu.oop3.components.user_management.StudentService;
+import edu.aitu.oop3.components.reporting.StudentSchedule;
 
 import java.util.Comparator;
 import java.util.List;

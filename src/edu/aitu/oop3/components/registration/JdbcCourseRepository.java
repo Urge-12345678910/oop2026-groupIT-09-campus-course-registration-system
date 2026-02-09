@@ -1,9 +1,6 @@
-package edu.aitu.oop3.repository.jdbc;
+package edu.aitu.oop3.components.registration;
 
-import edu.aitu.oop3.db.DatabaseConnection;
-import edu.aitu.oop3.entity.Course;
-import edu.aitu.oop3.repository.CourseRepository;
-import edu.aitu.oop3.Factory.CourseFactory;
+import edu.aitu.oop3.components.common.db.DatabaseConnection;
 
 
 import java.sql.Connection;

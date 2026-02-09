@@ -1,7 +1,4 @@
-package edu.aitu.oop3.service;
-
-import edu.aitu.oop3.entity.Student;
-import edu.aitu.oop3.repository.StudentRepository;
+package edu.aitu.oop3.components.user_management;
 
 import java.util.List;
 

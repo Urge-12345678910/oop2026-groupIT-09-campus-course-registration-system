@@ -1,4 +1,4 @@
-package edu.aitu.oop3.repository;
+package edu.aitu.oop3.components.common;
 
 import java.util.List;
 

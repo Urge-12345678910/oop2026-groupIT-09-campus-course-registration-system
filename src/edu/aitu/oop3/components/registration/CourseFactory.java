@@ -1,9 +1,4 @@
-package edu.aitu.oop3.Factory;
-import edu.aitu.oop3.entity.Course;
-import edu.aitu.oop3.entity.LabCourse;
-import edu.aitu.oop3.entity.LectureCourse;
-import edu.aitu.oop3.entity.OnlineCourse;
-
+package edu.aitu.oop3.components.registration;
 
 
 public class CourseFactory {
